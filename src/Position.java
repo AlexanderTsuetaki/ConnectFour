@@ -10,23 +10,27 @@ public class Position {
 		row = r;
 		col = c;
 	}
-	public getRow(){
+	public int getRow(){
 		return row;
 	}
-	public getCol(){
+	public int getCol(){
 		return col;
 	}
-	public setRow(int r){
+	public void setRow(int r){
 		row = r;
 	}
-	public setCol(int c){
+	public void setCol(int c){
 		col = c;
 	}
-	public equals(Object other){
-		if (!(other.instanceOf(Position)))
-			return false;
-		if (other.getRow() == this.getRow() && other.getCol() == this.getCol())
-			return true;
+	
+	@Override
+	public boolean equals(Object other){
+		if (other instanceof Position) {
+			Position otherPos = (Position)other;
+			if (otherPos.getRow() == this.getRow() && 
+				otherPos.getCol() == this.getCol())
+				return true;
+		}
 		return false;
 	}
 
