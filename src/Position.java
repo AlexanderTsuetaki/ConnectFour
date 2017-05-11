@@ -10,19 +10,19 @@ public class Position {
 		row = r;
 		col = c;
 	}
-	public getRow(){
+	public void getRow(){
 		return row;
 	}
-	public getCol(){
+	public void getCol(){
 		return col;
 	}
-	public setRow(int r){
+	public void setRow(int r){
 		row = r;
 	}
-	public setCol(int c){
+	public void setCol(int c){
 		col = c;
 	}
-	public equals(Object other){
+	public boolean equals(Object other){
 		if (!(other.instanceOf(Position)))
 			return false;
 		if (other.getRow() == this.getRow() && other.getCol() == this.getCol())
