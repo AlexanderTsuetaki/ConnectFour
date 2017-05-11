@@ -7,6 +7,7 @@ public class ConnectFour implements BoardGame {
 
 	@Override
 	public void newGame() {
+		return;
 		// TODO Auto-generated method stub
 		
 	}
