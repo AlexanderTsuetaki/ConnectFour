@@ -2,7 +2,7 @@
 public class ConnectFour implements BoardGame {
 
 	public ConnectFour() {
-		// TODO Auto-generated constructor stub
+		System.out.println("github is fun");
 	}
 
 	@Override
