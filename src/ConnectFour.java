@@ -19,7 +19,23 @@ public class ConnectFour implements BoardGame {
 
 	@Override
 	public boolean gameOver() {
-		// TODO Auto-generated method stub
+		for (int i = 0;i< board.length;i++){
+			for(int j = 0;j<board[i].length;i++){
+				if(board[i][j]==currentPlayer){
+					for(int upDown = 0;upDown<2;upDown++){
+						for(int leftRight = -1;leftRight<2;leftRight++){
+							if (upDown == 0 && leftRight == 0){
+								continue;
+							}
+							
+							if((board[i+(2*upDown)][j+(2*leftRight)] == currentPlayer)&&(board[i+(3*upDown)][j+(3*leftRight)] == currentPlayer)){
+								return true;
+							}
+						}
+					}
+				}
+			}
+		}
 		return false;
 	}
 
@@ -30,7 +46,7 @@ public class ConnectFour implements BoardGame {
 
 	@Override
 	public Position[] getWinningPositions() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
