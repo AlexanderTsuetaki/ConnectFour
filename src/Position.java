@@ -14,7 +14,7 @@ public class Position {
 	public int getRow(){
 		return row;
 	}
-	public int getCol(){
+	public int getColumn(){
 		return col;
 	}
 	public void setRow(int r){
@@ -29,7 +29,7 @@ public class Position {
 		if (other instanceof Position) {
 			Position otherPos = (Position)other;
 			if (otherPos.getRow() == this.getRow() && 
-				otherPos.getCol() == this.getCol())
+				otherPos.getColumn() == this.getColumn())
 				return true;
 		}
 		return false;
