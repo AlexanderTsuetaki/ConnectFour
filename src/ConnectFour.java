@@ -19,6 +19,7 @@ public class ConnectFour implements BoardGame {
 		}
 		winner = 0;
 		winningPositions = new Position[4];
+		currentPlayer = 1;
 	}
 
 	@Override
