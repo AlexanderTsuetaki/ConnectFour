@@ -10,7 +10,7 @@ public class Position {
 		row = r;
 		col = c;
 	}
-//hello
+
 	public int getRow(){
 		return row;
 	}

@@ -19,6 +19,21 @@ public class ConnectFour implements BoardGame {
 
 	@Override
 	public boolean gameOver() {
+		if (getWinner() != 0)
+			return true;
+		else {
+			for (int r = 0; r < 6; r++) {
+				for (int c = 0; c < 7; c++) {
+					if (board[r][c] == 0)
+						return false;
+				}
+			}
+			return true;
+		}
+	}
+
+	@Override
+	public int getWinner() {
 		for (int i = 0;i< board.length;i++){
 			for(int j = 0;j<board[i].length;i++){
 				if(board[i][j]==currentPlayer){
@@ -29,19 +44,14 @@ public class ConnectFour implements BoardGame {
 							}
 							
 							if((board[i+(2*upDown)][j+(2*leftRight)] == currentPlayer)&&(board[i+(3*upDown)][j+(3*leftRight)] == currentPlayer)){
-								return true;
+								return currentPlayer;
 							}
 						}
 					}
 				}
 			}
 		}
-		return false;
-	}
-
-	@Override
-	public int getWinner() {
-		return currentPlayer;
+		return 0;
 	}
 
 	@Override
