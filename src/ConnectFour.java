@@ -8,6 +8,7 @@ public class ConnectFour implements BoardGame {
 	public ConnectFour() {
 		board = new int[6][7];
 		winningPositions = new Position[4];
+		currentPlayer = 1;
 	}
 
 	@Override
@@ -56,10 +57,17 @@ public class ConnectFour implements BoardGame {
 									&& (board[i+(3*upDown)][j+(3*leftRight)] == player)) 
 								{
 									//set the winning positions here
-									winningPositions[0] = new Position(i, j);
-									winningPositions[1] = new Position(i+upDown, j+leftRight);
-									winningPositions[2] = new Position(i+(2*upDown), j+(2*leftRight));
-									winningPositions[3] = new Position(i+(3*upDown), j+(3*leftRight));
+									if (upDown != 0) {
+										winningPositions[3] = new Position(i, j);
+										winningPositions[2] = new Position(i+upDown, j+leftRight);
+										winningPositions[1] = new Position(i+(2*upDown), j+(2*leftRight));
+										winningPositions[0] = new Position(i+(3*upDown), j+(3*leftRight));
+									} else {
+										winningPositions[0] = new Position(i, j);
+										winningPositions[1] = new Position(i+upDown, j+leftRight);
+										winningPositions[2] = new Position(i+(2*upDown), j+(2*leftRight));
+										winningPositions[3] = new Position(i+(3*upDown), j+(3*leftRight));
+									}
 									return player;
 								}
 							}

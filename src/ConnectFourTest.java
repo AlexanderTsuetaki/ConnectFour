@@ -320,7 +320,7 @@ public class ConnectFourTest {
 		tempPos = new Position(rowStart, startPos);
 		for(int i = 0; i < winningPositions.length; i++){
 			tempPos.setRow(rowStart);
-			//System.out.println("DEBUG: " + tempPos + " - " + winningPositions[i]);
+			//System.out.println("DEBUG: " + tempPos.toString() + " - " + winningPositions[i].toString());
 			assertTrue("Correct win placement", tempPos.equals(winningPositions[i]));
 			rowStart--;
 		}
