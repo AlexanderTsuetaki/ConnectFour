@@ -42,7 +42,6 @@ public class ConnectFour implements BoardGame {
 							if (upDown == 0 && leftRight == 0){
 								continue;
 							}
-							
 							if((board[i+(2*upDown)][j+(2*leftRight)] == currentPlayer)&&(board[i+(3*upDown)][j+(3*leftRight)] == currentPlayer)){
 								return currentPlayer;
 							}
@@ -83,7 +82,6 @@ public class ConnectFour implements BoardGame {
 		else{
 			currentPlayer= 1;
 		}
-		
 	}
 
 	@Override
