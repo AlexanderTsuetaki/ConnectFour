@@ -14,6 +14,10 @@ public class ConnectFour implements BoardGame {
 	public ConnectFour() {
 		board = new int[6][7];
 		winningPositions = new Position[4];
+		winningPositions[0] = new Position(-1,-1);
+		winningPositions[1] = new Position(-1,-1);
+		winningPositions[2] = new Position(-1,-1);
+		winningPositions[3] = new Position(-1,-1);
 		currentPlayer = 1;
 	}
 
@@ -29,6 +33,10 @@ public class ConnectFour implements BoardGame {
 		winner = 0;
 		winningPositions = new Position[4];
 		currentPlayer = 1;
+		winningPositions[0] = new Position(-1,-1);
+		winningPositions[1] = new Position(-1,-1);
+		winningPositions[2] = new Position(-1,-1);
+		winningPositions[3] = new Position(-1,-1);
 	}
 
 	/**
