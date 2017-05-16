@@ -1,17 +1,25 @@
-
+/**
+ * The class that holds the methods to be used in the ConnectFour Game in the ConnectFourGUI
+ * @author 18owenst/18tsuetaki
+ * @version 5/15/17
+ */
 public class ConnectFour implements BoardGame {
 	private int[][] board;
 	private int currentPlayer;
 	private Position[] winningPositions;
 	private int winner;
-	
+	/**
+	 * the constructor for the ConnectFour class. 
+	 */
 	public ConnectFour() {
 		board = new int[6][7];
 		winningPositions = new Position[4];
 		currentPlayer = 1;
 	}
 
-	@Override
+	/**
+	 * resets the board for a new game by setting everything back
+	 */
 	public void newGame() {
 		for(int i = 0; i < board.length; i++){
 			for(int j = 0; j < board[i].length; j++){
@@ -23,7 +31,9 @@ public class ConnectFour implements BoardGame {
 		currentPlayer = 1;
 	}
 
-	@Override
+	/**
+	 * determines if the game is won or a draw and sets the winner accordingly
+	 */
 	public boolean gameOver() {
 		if (getWinner() != 0) {
 			winner = getWinner(); //set the winner here
@@ -38,21 +48,10 @@ public class ConnectFour implements BoardGame {
 			return true;
 		}
 	}
-
-	@Override
+	/**
+	 * returns the winner and sets the winning positions.
+	 */
 	public int getWinner() {
-<<<<<<< HEAD
-		for (int i = 0;i< board.length;i++){
-			for(int j = 0;j<board[i].length;i++){
-				if(board[i][j]==currentPlayer){
-					for(int upDown = 0;upDown<2;upDown++){
-						for(int leftRight = -1;leftRight<2;leftRight++){
-							if (upDown == 0 && leftRight == 0){
-								continue;
-							}
-							if((board[i+(2*upDown)][j+(2*leftRight)] == currentPlayer)&&(board[i+(3*upDown)][j+(3*leftRight)] == currentPlayer)){
-								return currentPlayer;
-=======
 		for (int player = 1; player < 3; player++) {
 			for (int i = 0; i< board.length; i++){
 				for(int j = 0;j<board[i].length; j++){
@@ -82,7 +81,6 @@ public class ConnectFour implements BoardGame {
 									}
 									return player;
 								}
->>>>>>> 18owenst/master
 							}
 						}
 					}
@@ -92,17 +90,23 @@ public class ConnectFour implements BoardGame {
 		return 0;
 	}
 
-	@Override
+	/**
+	 * returns the winning positions set in 
+	 */
 	public Position[] getWinningPositions() {
 		return winningPositions;
 	}
 
-	@Override
+	/**
+	 * returns if the column being checked is full 
+	 */
 	public boolean columnFull(int column) {
 		return (board[0][column] != 0);
 	}
 
-	@Override
+	/**
+	 * checks to see if a play is valid and then sets a space to the correct column if it is then changes the player
+	 */
 	public void play(int column) {
 		if (!columnFull(column)){
 			for (int i = board.length-1; i >= 0; i--){
@@ -112,20 +116,12 @@ public class ConnectFour implements BoardGame {
 				}
 			}
 		}
-<<<<<<< HEAD
-		if (currentPlayer==1){
-			currentPlayer= 2;
-		}
-		else{
-			currentPlayer= 1;
-		}
-=======
 		currentPlayer = currentPlayer % 2 + 1;
-		
->>>>>>> 18owenst/master
 	}
 
-	@Override
+	/**
+	 * returns the current board state
+	 */
 	public int[][] getBoard() {
 		return board;
 	}
