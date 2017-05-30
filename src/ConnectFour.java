@@ -123,8 +123,8 @@ public class ConnectFour implements BoardGame {
 					break;
 				}
 			}
+			currentPlayer = currentPlayer % 2 + 1;
 		}
-		currentPlayer = currentPlayer % 2 + 1;
 	}
 
 	/**
