@@ -1,15 +1,15 @@
 /**
- * The class that holds the methods to be used in the ConnectFour Game in the ConnectFourGUI
+ * Holds methods to be used in ConnectFourGUI to run a ConnectFour game.
  * @author 18owenst/18tsuetaki
- * @version 5/15/17
+ * @version 5/30/17
  */
 public class ConnectFour implements BoardGame {
 	private int[][] board;
 	private int currentPlayer;
 	private Position[] winningPositions;
-	private int winner;
+
 	/**
-	 * the constructor for the ConnectFour class. 
+	 * The default constructor for the ConnectFour class. 
 	 */
 	public ConnectFour() {
 		board = new int[6][7];
@@ -22,7 +22,7 @@ public class ConnectFour implements BoardGame {
 	}
 
 	/**
-	 * resets the board for a new game by setting everything back
+	 * Resets the board for a new game by setting all variables to their default values.
 	 */
 	public void newGame() {
 		for(int i = 0; i < board.length; i++){
@@ -30,7 +30,7 @@ public class ConnectFour implements BoardGame {
 				board[i][j] = 0;
 			}
 		}
-		winner = 0;
+
 		winningPositions = new Position[4];
 		currentPlayer = 1;
 		winningPositions[0] = new Position();
@@ -40,11 +40,10 @@ public class ConnectFour implements BoardGame {
 	}
 
 	/**
-	 * determines if the game is won or a draw and sets the winner accordingly
+	 * Determines if the game is won or a draw and sets the winner accordingly.
 	 */
 	public boolean gameOver() {
 		if (getWinner() != 0) {
-			winner = getWinner(); //set the winner here
 			return true;
 		} else {
 			for (int r = 0; r < 6; r++) {
@@ -57,7 +56,7 @@ public class ConnectFour implements BoardGame {
 		}
 	}
 	/**
-	 * returns the winner and sets the winning positions.
+	 * Returns the winner and sets the winning positions.
 	 */
 	public int getWinner() {
 		for (int player = 1; player < 3; player++) {
@@ -99,21 +98,21 @@ public class ConnectFour implements BoardGame {
 	}
 
 	/**
-	 * returns the winning positions set in 
+	 * Returns the winning positions.
 	 */
 	public Position[] getWinningPositions() {
 		return winningPositions;
 	}
 
 	/**
-	 * returns if the column being checked is full 
+	 * Returns true if the column being checked is full.
 	 */
 	public boolean columnFull(int column) {
 		return (board[0][column] != 0);
 	}
 
 	/**
-	 * checks to see if a play is valid and then sets a space to the correct column if it is then changes the player
+	 * Checks to see if a play is valid, then makes the play if it's valid. Changes the current player.
 	 */
 	public void play(int column) {
 		if (!columnFull(column)){
@@ -128,7 +127,7 @@ public class ConnectFour implements BoardGame {
 	}
 
 	/**
-	 * returns the current board state
+	 * Returns the current board state.
 	 */
 	public int[][] getBoard() {
 		return board;
