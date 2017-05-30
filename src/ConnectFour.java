@@ -107,6 +107,7 @@ public class ConnectFour implements BoardGame {
 
 	/**
 	 * returns if the column being checked is full 
+	 * @param column 
 	 */
 	public boolean columnFull(int column) {
 		return (board[0][column] != 0);
@@ -114,6 +115,7 @@ public class ConnectFour implements BoardGame {
 
 	/**
 	 * checks to see if a play is valid and then sets a space to the correct column if it is then changes the player
+	 * @param column 
 	 */
 	public void play(int column) {
 		if (!columnFull(column)){
