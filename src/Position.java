@@ -1,58 +1,60 @@
 /**
- * The position class for use in the ConnectFour.java class
+ * The Position class for use in ConnectFour
  * @author 18owenst/18tsuetaki
  * @version 5/15/17
  */
 public class Position {
 	private	int row;
 	private int col;
+	
 	/**
-	 * 0 args constructor that sets the row and column of the positions as -1
+	 * Zero-args constructor that sets the row and column of the positions to -1
 	 */
 	public Position() {
 		row = -1;
 		col = -1;
 	}
+	
 	/**
-	 * the constructor of the Position class that sets the row and col to the correct values
-	 * @param r
-	 * @param c
+	 * Parameterized constructor of the Position class that sets the row and col to the given values
+	 * @param r, the row
+	 * @param c, the column
 	 */
 	public Position(int r, int c) {
 		row = r;
 		col = c;
 	}
 	/**
-	 * returns the row
+	 * Returns the row of this Position
 	 * @return row
 	 */
 	public int getRow(){
 		return row;
 	}
 	/**
-	 * returns the column
+	 * Returns the column of this Position
 	 * @return col
 	 */
 	public int getColumn(){
 		return col;
 	}
 	/**
-	 * sets the row value to a new designated value
-	 * @param r
+	 * Sets row to the given value
+	 * @param r, the new row
 	 */
 	public void setRow(int r){
 		row = r;
 	}
 	/**
-	 * sets the col value to a new designated value
-	 * @param c
+	 * Sets col to the given value
+	 * @param c, the new column
 	 */
 	public void setCol(int c){
 		col = c;
 	}
 	
 	/**
-	 * An equals method. Finds if two Positions are equal and returns true or false accordingly
+	 * An equals method. Finds if two Positions are equal and returns true or false accordingly.
 	 */
 	public boolean equals(Object other){
 		if (other instanceof Position) {
